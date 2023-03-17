@@ -27,16 +27,22 @@ Carolina a uitat când i-a făcut celelalte vaccinuri lui
     passport: false,
 
      descriptionRudy() {
-        return `Rudy este un caine de rasa ${this.tipRasa}, are culoarea  ${this.colorPar}, s-a nascut in anul ${this.birthDay} si ${!this.passport ? "nu " : ""} are pasaport  si are urmatoarele vaccinuri ${this.vaccin}`;
+        return `Rudy este un caine de rasa ${this.tipRasa}, are culoarea  ${this.colorPar}, s-a nascut in anul ${this.birthDay} si ${!this.passport ? "nu " : ""} are voie sa iasa din Moldova si are urmatoarele vaccine ${this.vaccin[0].nume} `;
 
     },
      adaugareVaccin(vaccin){
         this.vaccin.push(vaccin)
+     },
+     afiseazaIstoriculVaccinarii(){
+      for(let i=0; i < this.vaccin.length; i++){
+         console.log(" vaccin  "+ this.vaccin[i].nume + " data de "+ this.vaccin[i].data )
+      }
      }
    }
 
-    dogRudy.adaugareVaccin("hepatita canina");
-
+    dogRudy.adaugareVaccin({nume: "hepatita canina", data:"2020-03-17" } );
+    dogRudy.afiseazaIstoriculVaccinarii();
     console.log(dogRudy.descriptionRudy());
+    
 
   
