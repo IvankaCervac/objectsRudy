@@ -27,8 +27,16 @@ Carolina a uitat când i-a făcut celelalte vaccinuri lui
     passport: false,
 
      descriptionRudy() {
-        return `Rudy este un caine de rasa ${this.tipRasa}, are culoarea  ${this.colorPar}, s-a nascut in anul ${this.birthDay} si ${!this.passport ? "nu " : ""} are pasaport `
+        return `Rudy este un caine de rasa ${this.tipRasa}, are culoarea  ${this.colorPar}, s-a nascut in anul ${this.birthDay} si ${!this.passport ? "nu " : ""} are pasaport  si are urmatoarele vaccinuri ${this.vaccin}`;
 
     },
+     adaugareVaccin(vaccin){
+        this.vaccin.push(vaccin)
+     }
    }
-   console.log(dogRudy.descriptionRudy());
+
+    dogRudy.adaugareVaccin("hepatita canina");
+
+    console.log(dogRudy.descriptionRudy());
+
+  
